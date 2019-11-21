@@ -1,5 +1,4 @@
 ## userテーブル
-
 |Column|Type|Options|
 |------|----|-------|
 |name|string|index: true, null: false, unique: true|
@@ -11,7 +10,6 @@
 - has_many :groups_users
 
 ## groupテーブル
-
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
@@ -22,7 +20,6 @@
 - has_many :messages
 
 ## messageテーブル
-
 |Column|Type|Options|
 |------|----|-------|
 |body|text|null: false|
@@ -35,7 +32,6 @@
 - belongs_to :group
 
 ## groups_usersテーブル
-
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
