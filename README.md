@@ -25,8 +25,7 @@ Things you may want to cover:
 ## userテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|string|null: false, foreign_key: true|
-|group_id|string|null: false, foreign_key: true|
+|name|string|index: true, null: false, unique: true|
 
 ### Association
 - has_many :groups through: groups_users
@@ -36,7 +35,8 @@ Things you may want to cover:
 ## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|index: true, null: false, unique: true|
+|user_id|string|null: false, foreign_key: true|
+|group_id|string|null: false, foreign_key: true|
 
 ### Association
 - has_many :users, through: groups_users
