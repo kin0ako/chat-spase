@@ -1,0 +1,20 @@
+.chat-side
+  .side__header
+    .side__header__box
+      .side__header__box__user-name  kin0ako
+      .side__header__box__menu
+        .side__header__box__menu__new-group
+          = link_to "#" do
+            %i.far.fa-edit
+            -# = icon('fab', 'edit',class: "side_bar")
+        .side__header__box__menu__edit-user
+          = link_to "#" do
+            %i.fas.fa-cog
+            -# = icon('fab', 'cog',class: "main_chat")
+
+  .groups
+    .group
+      = link_to "#" do
+        .group__group-name AAA
+        .group__latest-message   ABABAB
+        
