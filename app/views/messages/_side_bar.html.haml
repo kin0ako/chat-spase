@@ -1,20 +1,21 @@
 .chat-side
   .side__header
     .side__header__box
-      .side__header__box__user-name  kin0ako
+      .side__header__box__user-name
+        = current_user.name
       .side__header__box__menu
         .side__header__box__menu__new-group
-          = link_to "#" do
-            %i.far.fa-edit
-            -# = icon('fab', 'edit',class: "side_bar")
+          = link_to new_group_path do
+            = icon('fas', 'edit', class: 'icon')
         .side__header__box__menu__edit-user
-          = link_to "#" do
-            %i.fas.fa-cog
-            -# = icon('fab', 'cog',class: "main_chat")
+          = link_to edit_user_path(current_user) do
+            = icon('fas', 'cog', class: 'icon')
 
   .groups
-    .group
-      = link_to "#" do
-        .group__group-name AAA
-        .group__latest-message   ABABAB
-        
+    - current_user.groups.each do |group|
+      .group
+        = link_to group_messages_path(group) do
+          .group__group-name
+            = group.name
+          .group__latest-message
+            メッセージはありません。
