@@ -34,13 +34,12 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html);
-      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');   
+      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});   
       $('form')[0].reset();
       $('.form__submit').prop('disabled', false);
     })
     .fail(function(){
        alert('error');
-       $('.form__submit').prop('disabled', false);
     });
     return false;
     });
@@ -60,7 +59,7 @@ $(function(){
           insertHTML = buildHTML(message);
           $('.messages').append(insertHTML);
         })
-      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'slowly');
+      // $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'slowly');
       })
       .fail(function() {
         alert('失敗しました');
