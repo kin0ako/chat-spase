@@ -36,9 +36,11 @@ $(function(){
       $('.messages').append(html);
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');   
       $('form')[0].reset();
+      $('.form__submit').prop('disabled', false);
     })
     .fail(function(){
        alert('error');
+       $('.form__submit').prop('disabled', false);
     });
     return false;
     });
