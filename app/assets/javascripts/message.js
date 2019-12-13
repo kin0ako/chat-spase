@@ -59,7 +59,7 @@ $(function(){
           insertHTML = buildHTML(message);
           $('.messages').append(insertHTML);
         })
-      // $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'slowly');
+      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'slowly');
       })
       .fail(function() {
         alert('失敗しました');
